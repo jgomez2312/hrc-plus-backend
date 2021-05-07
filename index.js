@@ -21,7 +21,7 @@ app.get('/', (req = request, res = response) => {
 
     res.json({
         ok: true,
-        msg: 'Hola Mundo'
+        msg: 'Hola Mundo de nuevo'
     });
 });
 
