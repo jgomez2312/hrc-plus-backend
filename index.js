@@ -1,8 +1,7 @@
-const express = require('express');
-const cors = require('cors')
 require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
 
-const { request, response } = require('express');
 const { dbConn } = require('./database/config');
 
 // Crear servidor de express
@@ -11,19 +10,16 @@ const app = express();
 // Cors
 app.use(cors());
 
+// Lectura y parseo  del Body
+app.use(express.json());
+
 // DB conexion
 dbConn();
 
-
-
 //Rutas
-app.get('/', (req = request, res = response) => {
+app.use('/api/usuarios', require('./routes/usuarios'));
+app.use('/api/login', require('./routes/auth'));
 
-    res.json({
-        ok: true,
-        msg: 'Hola Mundo de nuevo'
-    });
-});
 
 
 
