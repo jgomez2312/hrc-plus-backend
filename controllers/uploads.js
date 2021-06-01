@@ -73,8 +73,6 @@ const fileUpload = async(req = request, res = response) => {
 
     });
 
-
-
 };
 
 const retornaImagen = async(req = request, res = response) => {
@@ -92,9 +90,6 @@ const retornaImagen = async(req = request, res = response) => {
         const pathImg = path.join(__dirname, `../uploads/no-img.png`);
         res.sendFile(pathImg);
     }
-
-
-
 
 };
 
