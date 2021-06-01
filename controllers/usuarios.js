@@ -144,14 +144,7 @@ const deleteUsuarios = async(req = request, res = response) => {
             msg: 'Error inesperado ... revisar logs '
         });
     }
-
-
-
-
-
 };
-
-
 
 module.exports = {
     getUsuarios,

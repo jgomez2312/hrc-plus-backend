@@ -96,7 +96,21 @@ const loginGoogle = async(req = request, res = response) => {
 
 };
 
+const renewToken = async(req = request, res = response) => {
+
+    const uid = req.uid;
+
+    // Generar  el JWTK
+    const token = await generateJWT(uid);
+
+    res.json({
+        ok: true,
+        token
+    });
+};
+
 module.exports = {
     login,
-    loginGoogle
+    loginGoogle,
+    renewToken
 };
